@@ -1,0 +1,114 @@
+========================================================================
+  STELLA MARIS GOVERNANCE — WASTE SCANNER v1.0.0
+  FinOps Pack 05 — Waste Elimination & Right-Sizing
+========================================================================
+
+  Scan Date:         2026-02-11 16:58 UTC
+  Resources Scanned: 127
+  Subscriptions:     2 (Lab-Production, Lab-Development)
+  Assessor:          Robert Myers, MBA
+
+────────────────────────────────────────────────────────────────────────
+  FINDINGS BY CATEGORY
+────────────────────────────────────────────────────────────────────────
+
+  💤 [IDLE] VM A1_v2 (Lab-Development)
+     CPU avg 0.4% for 30 days | 0 network connections
+     Owner: dev-team | Created: 2025-11-03 | No project tag
+     Cost: $28.00/month | Disposition: DECOMMISSION
+     Reason: No purpose identified. No consumer. No justification.
+
+  💤 [IDLE] VM B1s (Lab-Development)
+     CPU avg 1.2% for 30 days | ExpiryDate: 2026-01-31 (EXPIRED)
+     Owner: dev-team | Project: poc-auth-migration (COMPLETED)
+     Cost: $12.00/month | Disposition: DECOMMISSION
+     Reason: PoC completed Dec 2025. VM still running. $12/month waste.
+
+  💤 [IDLE] App Service P1v3 (Lab-Development)
+     CPU avg 4% | 0 requests on weekends | Premium tier for dev
+     Owner: dev-team | Environment: development
+     Cost: $94.00/month (current) → $18.00/month (B1)
+     Disposition: RIGHT-SIZE to B1 | Savings: $76.00/month
+
+  💤 [IDLE] Storage Account (Lab-Development)
+     0 blob transactions in 30 days | 2.1 GB retained
+     Cost: $8.00/month | Disposition: DECOMMISSION (after data review)
+
+  📐 [RIGHT-SIZE] VM D2s_v5 → B2s (Lab-Development)
+     P95 CPU: 22% | P95 Memory: 41%
+     Current: D2s_v5 (2 vCPU, 8 GB) — $89.00/month
+     Target:  B2s (2 vCPU, 4 GB)    — $30.37/month
+     Savings: $58.63/month | Risk: Low (development, burstable OK)
+
+  📐 [RIGHT-SIZE] SQL S2 → S0 (Lab-Development)
+     P95 DTU: 18% | Current: 50 DTU → Target: 10 DTU
+     Current: $81.00/month → Target: $15.03/month
+     Savings: $65.97/month | Risk: Low (development queries intermittent)
+
+  📐 [RIGHT-SIZE] VM D4s_v5 (Lab-Production) — DEFERRED
+     P95 CPU: 71% | P95 Memory: 58%
+     Current: D4s_v5 (4 vCPU, 16 GB) — $178.00/month
+     Target:  D2s_v5 (2 vCPU, 8 GB)  — $89.00/month
+     ⚠️  DEFERRED: P95 at 71% on 4 vCPU = ~142% on 2 vCPU
+     Production workload. Right-sizing would cause performance failure.
+     P95 methodology prevented a bad decision.
+
+  👻 [ORPHAN] Managed Disk — 128GB Standard SSD
+     No attached VM | Created: 2025-12-15 | Owner: dev-team
+     Cost: $10.00/month | Disposition: DELETE ✅ COMPLETED
+
+  👻 [ORPHAN] Public IP Address
+     No associated NIC | Created: 2025-10-22 | No tags
+     Cost: $3.65/month | Disposition: DELETE ✅ COMPLETED
+
+  👻 [ORPHAN] Snapshot — 64GB
+     Age: 155 days | Project: migration-q3 (COMPLETED)
+     Cost: $3.20/month | Disposition: DELETE ✅ COMPLETED
+
+  👻 [ORPHAN] NIC (unattached)
+     No attached VM | Same creation date as idle VM A1_v2
+     Cost: $0.00/month | Disposition: DELETE ✅ COMPLETED
+
+  👻 [ORPHAN] Empty Resource Group (rg-poc-auth)
+     0 resources | Created: 2025-12-01
+     Cost: $0.00/month | Disposition: DELETE ✅ COMPLETED
+
+  ⏰ [SCHEDULE] Development Environment — Systemic Finding
+     8 resources running 24/7 (730 hrs/month)
+     Recommended: Business hours (220 hrs/month)
+     Waste hours: 510 hrs/month (70%)
+     Estimated savings: $565.00/month
+     Disposition: SCHEDULE (pending Azure Automation setup)
+     Note: Pack 02 weekend VM anomaly ($34.80) is a subset of this finding
+
+════════════════════════════════════════════════════════════════════════
+  WASTE SCAN SUMMARY
+════════════════════════════════════════════════════════════════════════
+
+  Category          Findings    Confirmed      Estimated
+  ─────────────     ────────    ─────────      ─────────
+  Idle Resources        4       $52.00/mo      $142.00/mo
+  Right-Sizing          3       $0 (pending)   $198.00/mo
+  Orphan Resources      5       $16.85/mo      $16.85/mo
+  Schedule              1       $0 (pending)   $565.00/mo
+  ─────────────     ────────    ─────────      ─────────
+  TOTAL                12       $68.85/mo      $921.85/mo
+
+  Annual projected savings: $11,062.20
+  Waste as % of total spend: 18.4% ($921.85 / $5,000)
+  Industry benchmark: 20-35% (source: FinOps Foundation)
+
+  Remediation Status:
+    Completed:    4 (all orphans)
+    In Progress:  5 (idle + right-size)
+    Deferred:     1 (production VM — needs workload analysis)
+    Pending:      2 (schedule automation, storage data review)
+
+  Every idle resource is a silent invoice.
+  Every orphan is a forgotten liability.
+  This scanner makes both visible.
+
+════════════════════════════════════════════════════════════════════════
+  © 2026 Stella Maris Governance LLC
+  The work speaks for itself.
+════════════════════════════════════════════════════════════════════════

@@ -7,6 +7,10 @@
 
 ---
 
+> **Governance Notice** — This pack is governed by the [Stella Maris Constitution (CONST-01)](https://github.com/stella-maris-governance/smg-enterprise-hq) and enforces **POL-FIN-01 (Financial Operations) · FinOps Foundation · NIST PM-3**. All dispositions are subject to the Two-Person Integrity Protocol.
+
+---
+
 ## Start Here
 
 | You Are | Read This First |
