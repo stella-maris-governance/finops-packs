@@ -1,0 +1,49 @@
+{
+  "_metadata": {
+    "pack": "waste-elimination-rightsizing",
+    "version": "1.0.0",
+    "description": "Auto-shutdown schedules by environment. Requires Azure Automation."
+  },
+  "schedules": {
+    "development": {
+      "auto_shutdown": "18:00",
+      "auto_start": "08:00",
+      "timezone": "America/Chicago",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "weekend": "shutdown_all",
+      "estimated_savings_pct": 70,
+      "notes": "Development resources do not need to run outside business hours."
+    },
+    "test": {
+      "auto_shutdown": "20:00",
+      "auto_start": "07:00",
+      "timezone": "America/Chicago",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "weekend": "shutdown_unless_tagged",
+      "estimated_savings_pct": 65,
+      "notes": "Extended hours for test cycles. Weekend by exception only."
+    },
+    "sandbox": {
+      "auto_shutdown": "17:00",
+      "auto_start": "09:00",
+      "timezone": "America/Chicago",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "weekend": "shutdown_all",
+      "estimated_savings_pct": 75,
+      "notes": "Shortest window. Sandbox is for experimentation during work hours."
+    },
+    "staging": {
+      "auto_shutdown": "22:00",
+      "auto_start": "06:00",
+      "timezone": "America/Chicago",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "weekend": "reduced_hours",
+      "estimated_savings_pct": 30,
+      "notes": "Extended for deployment windows. Weekend reduced but available."
+    },
+    "production": {
+      "auto_shutdown": "NEVER",
+      "notes": "Production resources run 24/7. Optimization via right-sizing and reservations, not scheduling."
+    }
+  }
+}

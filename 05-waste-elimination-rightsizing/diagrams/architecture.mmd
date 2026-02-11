@@ -1,0 +1,42 @@
+graph TD
+    subgraph DETECT["Detect"]
+        IDLE["Idle Scanner"]
+        RIGHTSIZE["Right-Size Analyzer"]
+        ORPHAN["Orphan Detector"]
+        SCHEDULE["Schedule Analyzer"]
+        AGED["Aged Resource Scan"]
+        TIER["Pricing Tier Check"]
+    end
+
+    subgraph DECIDE["Decide"]
+        DECOM["Decommission"]
+        RESIZE["Right-Size"]
+        SCHED["Schedule"]
+        JUSTIFY["Justify"]
+        DEFER["Defer"]
+    end
+
+    subgraph TRACK["Track"]
+        REGISTER["Waste Register"]
+        REMEDIATE["Remediation Tracking"]
+        VERIFY["Savings Verification"]
+    end
+
+    IDLE --> DECOM
+    RIGHTSIZE --> RESIZE
+    ORPHAN --> DECOM
+    SCHEDULE --> SCHED
+    AGED --> DECOM
+    TIER --> RESIZE
+
+    IDLE --> JUSTIFY
+    RIGHTSIZE --> DEFER
+
+    DECOM --> REGISTER
+    RESIZE --> REGISTER
+    SCHED --> REGISTER
+    JUSTIFY --> REGISTER
+    DEFER --> REGISTER
+
+    REGISTER --> REMEDIATE
+    REMEDIATE --> VERIFY

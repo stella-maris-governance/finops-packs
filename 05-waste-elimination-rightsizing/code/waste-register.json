@@ -1,0 +1,32 @@
+{
+  "_metadata": {
+    "pack": "waste-elimination-rightsizing",
+    "version": "1.0.0",
+    "description": "Central register of all waste findings with dispositions."
+  },
+  "scan_date": "2026-02-12",
+  "findings": [
+    {"id": "W-001", "category": "idle", "resource": "VM A1_v2", "cost": 28.00, "disposition": "decommission", "status": "in_progress", "owner": "R. Myers", "target": "2026-02-19"},
+    {"id": "W-002", "category": "idle", "resource": "VM B1s (expired PoC)", "cost": 12.00, "disposition": "decommission", "status": "in_progress", "owner": "R. Myers", "target": "2026-02-19"},
+    {"id": "W-003", "category": "idle", "resource": "App Service P1v3 (dev)", "cost": 94.00, "disposition": "rightsize_to_B1", "status": "in_progress", "owner": "R. Myers", "target": "2026-02-26"},
+    {"id": "W-004", "category": "idle", "resource": "Storage account (dev)", "cost": 8.00, "disposition": "decommission", "status": "pending_review", "owner": "R. Myers", "target": "2026-02-26"},
+    {"id": "W-005", "category": "rightsizing", "resource": "VM D2s_v5 → B2s", "savings": 47.00, "disposition": "rightsize", "status": "in_progress", "owner": "R. Myers", "target": "2026-02-26"},
+    {"id": "W-006", "category": "rightsizing", "resource": "SQL S2 → S0", "savings": 62.00, "disposition": "rightsize", "status": "in_progress", "owner": "R. Myers", "target": "2026-02-26"},
+    {"id": "W-007", "category": "rightsizing", "resource": "VM D4s_v5 (prod)", "savings": 89.00, "disposition": "defer", "status": "deferred", "owner": "R. Myers", "target": "2026-03-15"},
+    {"id": "W-008", "category": "orphan", "resource": "Managed disk 128GB", "cost": 10.00, "disposition": "decommission", "status": "completed", "owner": "R. Myers"},
+    {"id": "W-009", "category": "orphan", "resource": "Public IP", "cost": 3.65, "disposition": "decommission", "status": "completed", "owner": "R. Myers"},
+    {"id": "W-010", "category": "orphan", "resource": "Snapshot 64GB", "cost": 3.20, "disposition": "decommission", "status": "completed", "owner": "R. Myers"},
+    {"id": "W-011", "category": "orphan", "resource": "NIC (unattached)", "cost": 0.00, "disposition": "decommission", "status": "completed", "owner": "R. Myers"},
+    {"id": "W-012", "category": "schedule", "resource": "Dev environment (systemic)", "savings_est": 565.00, "disposition": "schedule", "status": "pending_automation", "owner": "R. Myers", "target": "2026-03-01"}
+  ],
+  "summary": {
+    "total_findings": 12,
+    "completed": 4,
+    "in_progress": 5,
+    "deferred": 1,
+    "pending": 2,
+    "confirmed_savings_monthly": 68.85,
+    "projected_savings_monthly": 921.85,
+    "projected_savings_annual": 11062.20
+  }
+}
