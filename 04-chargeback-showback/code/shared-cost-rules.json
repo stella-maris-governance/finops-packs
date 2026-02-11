@@ -1,0 +1,51 @@
+{
+  "_metadata": {
+    "pack": "chargeback-showback",
+    "version": "1.0.0",
+    "description": "Shared resource allocation rules. Each method has documented rationale."
+  },
+  "rules": [
+    {
+      "name": "vnet_vpn_proportional",
+      "resource_type": "Virtual Network / VPN Gateway",
+      "method": "proportional",
+      "proportional_by": "connected_resource_cost",
+      "rationale": "Teams with more compute generate more network traffic and benefit proportionally from networking infrastructure."
+    },
+    {
+      "name": "entra_id_equal",
+      "resource_type": "Entra ID Licensing",
+      "method": "equal",
+      "proportional_by": "user_count",
+      "rationale": "Each user consumes one license regardless of usage intensity. Equal per-user distribution is fair."
+    },
+    {
+      "name": "defender_proportional",
+      "resource_type": "Defender for Cloud",
+      "method": "proportional",
+      "proportional_by": "protected_resource_count",
+      "rationale": "Teams with more resources generate more security monitoring cost. Protection scales with resource count."
+    },
+    {
+      "name": "keyvault_proportional",
+      "resource_type": "Key Vault",
+      "method": "proportional",
+      "proportional_by": "transaction_count",
+      "rationale": "Key Vault pricing is transaction-based. Teams making more API calls drive more cost."
+    },
+    {
+      "name": "log_analytics_proportional",
+      "resource_type": "Log Analytics Workspace",
+      "method": "proportional",
+      "proportional_by": "ingestion_volume_gb",
+      "rationale": "Log Analytics pricing is per-GB ingested. Teams generating more logs drive more cost."
+    },
+    {
+      "name": "backup_storage_proportional",
+      "resource_type": "Shared Backup Storage",
+      "method": "proportional",
+      "proportional_by": "data_volume_gb",
+      "rationale": "Backup costs scale with protected data volume. Teams with more data generate proportionally more backup cost."
+    }
+  ]
+}

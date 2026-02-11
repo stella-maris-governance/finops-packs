@@ -1,0 +1,55 @@
+{
+  "_metadata": {
+    "pack": "chargeback-showback",
+    "version": "1.0.0",
+    "description": "Per-cost-center budget tracking with variance analysis."
+  },
+  "period": "2026-02",
+  "budgets": {
+    "CC-1001": {
+      "name": "Engineering",
+      "monthly": 3800.00,
+      "actual_direct": 2847.00,
+      "actual_shared": 703.00,
+      "actual_total": 3550.00,
+      "variance": -250.00,
+      "variance_pct": -6.6,
+      "status": "under_budget",
+      "notes": "Healthy. Growth from new project resources (expected per Pack 02)."
+    },
+    "CC-1002": {
+      "name": "Data",
+      "monthly": 700.00,
+      "actual_direct": 412.00,
+      "actual_shared": 203.00,
+      "actual_total": 615.00,
+      "variance": -85.00,
+      "variance_pct": -12.1,
+      "status": "under_budget",
+      "notes": "Healthy. Cosmos DB growth tracked in Pack 03."
+    },
+    "CC-1003": {
+      "name": "Operations",
+      "monthly": 500.00,
+      "actual_direct": 287.00,
+      "actual_shared": 132.00,
+      "actual_total": 419.00,
+      "variance": -81.00,
+      "variance_pct": -16.2,
+      "status": "under_budget",
+      "notes": "Healthy. Stable month-over-month."
+    }
+  },
+  "untagged_quarantine": {
+    "total": 416.00,
+    "resources": 12,
+    "trend": "decreasing (15 → 12 over 30 days)"
+  },
+  "total": {
+    "budget": 5000.00,
+    "actual": 5000.00,
+    "attributed": 4584.00,
+    "quarantine": 416.00,
+    "leakage": 0.00
+  }
+}

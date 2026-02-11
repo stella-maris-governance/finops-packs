@@ -1,0 +1,34 @@
+{
+  "_metadata": {
+    "pack": "chargeback-showback",
+    "version": "1.0.0",
+    "description": "Three-layer cost allocation model. Zero leakage."
+  },
+  "model": {
+    "layer_1_direct": {
+      "description": "Direct attribution via Pack 01 required tags",
+      "tags_used": ["Owner", "CostCenter", "Project", "Environment"],
+      "coverage": "91.7% of costs (Pack 01 compliance rate)",
+      "method": "Azure Cost Management group-by-tag"
+    },
+    "layer_2_shared": {
+      "description": "Shared cost distribution across consuming cost centers",
+      "rules_file": "shared-cost-rules.json",
+      "categories": 6,
+      "methods": ["proportional", "equal"],
+      "coverage": "Platform and shared infrastructure costs"
+    },
+    "layer_3_untagged": {
+      "description": "Untagged cost quarantine with escalation",
+      "handling": "Default to subscription-level cost center",
+      "quarantine": "Separate report highlighting untagged resources",
+      "escalation": "Weekly report to engineering lead",
+      "coverage": "8.3% of costs (shrinking with Pack 01 backfill)"
+    }
+  },
+  "validation": {
+    "reconciliation": "Direct + Shared + Untagged = Subscription Total",
+    "leakage": 0.00,
+    "double_count_check": "Shared costs excluded from direct attribution before distribution"
+  }
+}

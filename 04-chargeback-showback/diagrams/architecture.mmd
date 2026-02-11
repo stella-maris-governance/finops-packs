@@ -1,0 +1,33 @@
+graph TD
+    subgraph LAYER1["Layer 1: Direct"]
+        TAGS["Pack 01 Tags"]
+        DIRECT["Direct Attribution"]
+    end
+
+    subgraph LAYER2["Layer 2: Shared"]
+        SHARED["Shared Resources"]
+        RULES["Allocation Rules"]
+        DISTRIBUTE["Distribution Engine"]
+    end
+
+    subgraph LAYER3["Layer 3: Untagged"]
+        UNTAGGED["Untagged Resources"]
+        QUARANTINE["Quarantine Bucket"]
+    end
+
+    subgraph OUTPUT["Output"]
+        SHOWBACK["Showback Reports"]
+        BUDGET["Budget vs Actual"]
+        GL["GL Feed (when ready)"]
+    end
+
+    TAGS --> DIRECT
+    SHARED --> RULES
+    RULES --> DISTRIBUTE
+    UNTAGGED --> QUARANTINE
+
+    DIRECT --> SHOWBACK
+    DISTRIBUTE --> SHOWBACK
+    QUARANTINE --> SHOWBACK
+    SHOWBACK --> BUDGET
+    BUDGET --> GL
