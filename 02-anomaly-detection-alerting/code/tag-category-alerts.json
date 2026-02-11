@@ -1,0 +1,45 @@
+{
+  "_metadata": {
+    "pack": "anomaly-detection-alerting",
+    "version": "1.0.0",
+    "description": "Alert rules by tag category. Tags make anomalies attributable."
+  },
+  "tag_alerts": [
+    {
+      "name": "Sandbox daily cost exceeded",
+      "tag": "Environment",
+      "value": "sandbox",
+      "condition": "daily_cost > 30",
+      "severity": "Warning",
+      "recipients": ["resource-owner", "risk-owner"]
+    },
+    {
+      "name": "Test environment exceeds 20% of production",
+      "tag": "Environment",
+      "condition": "test_monthly / production_monthly > 0.20",
+      "severity": "Warning",
+      "recipients": ["engineering-lead"]
+    },
+    {
+      "name": "Owner weekly cost spike",
+      "tag": "Owner",
+      "condition": "week_over_week_change > 40%",
+      "severity": "Warning",
+      "recipients": ["resource-owner"]
+    },
+    {
+      "name": "Project over budget",
+      "tag": "Project",
+      "condition": "monthly_actual > allocated_budget * 1.25",
+      "severity": "High",
+      "recipients": ["project-owner", "finance"]
+    },
+    {
+      "name": "CostCenter trend deviation",
+      "tag": "CostCenter",
+      "condition": "monthly_actual > three_month_avg * 1.30",
+      "severity": "Warning",
+      "recipients": ["finance", "risk-owner"]
+    }
+  ]
+}

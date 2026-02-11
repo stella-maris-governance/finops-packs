@@ -1,0 +1,97 @@
+{
+  "_metadata": {
+    "pack": "anomaly-detection-alerting",
+    "version": "1.0.0",
+    "description": "Cost alert register. Every alert investigated and dispositioned."
+  },
+  "alerts": [
+    {
+      "id": "COST-A-001",
+      "date": "2026-01-22",
+      "type": "Budget threshold",
+      "severity": "Warning",
+      "subscription": "Lab-Production",
+      "detail": "75% budget threshold reached (day 22 of billing cycle)",
+      "root_cause": "On-pace spending — 78.6% of month elapsed, 75% consumed",
+      "disposition": "Expected — on-pace",
+      "remediation": null
+    },
+    {
+      "id": "COST-A-002",
+      "date": "2026-01-24",
+      "type": "Anomaly — rolling average",
+      "severity": "Warning",
+      "subscription": "Lab-Production",
+      "detail": "Storage account cost 212% above 7-day average",
+      "root_cause": "Blob tier changed Cool → Hot for migration testing",
+      "disposition": "Expected — business event",
+      "remediation": "Reverted to Cool tier Jan 26"
+    },
+    {
+      "id": "COST-A-003",
+      "date": "2026-02-03",
+      "type": "Anomaly — day-over-day",
+      "severity": "Warning",
+      "subscription": "Lab-Production",
+      "detail": "Compute cost 90% above previous day",
+      "root_cause": "App Service auto-scale during scheduled load test",
+      "disposition": "Expected — business event",
+      "remediation": null
+    },
+    {
+      "id": "COST-A-004",
+      "date": "2026-02-07",
+      "type": "Anomaly — rolling average",
+      "severity": "Warning",
+      "subscription": "Lab-Production",
+      "detail": "Database cost 56% above 7-day average",
+      "root_cause": "Azure SQL auto-scaled to next DTU tier on utilization threshold",
+      "disposition": "Expected — growth",
+      "remediation": "Feed to Pack 03 for reservation analysis"
+    },
+    {
+      "id": "COST-A-005",
+      "date": "2026-02-01",
+      "type": "Anomaly — weekend",
+      "severity": "Warning",
+      "subscription": "Lab-Development",
+      "detail": "Dev VMs accrued $34.80 on Saturday-Sunday (weekday avg: $8.20/day)",
+      "root_cause": "Development VMs not deallocated for weekend",
+      "disposition": "Unexpected — waste",
+      "remediation": "Feed to Pack 05. Implement auto-shutdown schedule."
+    },
+    {
+      "id": "COST-A-006",
+      "date": "2026-02-05",
+      "type": "Tag-category — owner spike",
+      "severity": "Warning",
+      "subscription": "Lab-Development",
+      "detail": "dev-team owner costs 47% week-over-week increase",
+      "root_cause": "New project resources provisioned, properly tagged",
+      "disposition": "Expected — growth",
+      "remediation": null
+    },
+    {
+      "id": "COST-A-007",
+      "date": "2026-02-06",
+      "type": "Resource spike — new resource",
+      "severity": "Warning",
+      "subscription": "Lab-Production",
+      "detail": "New premium storage account $8.40/day",
+      "root_cause": "Legitimate new project resource, properly tagged",
+      "disposition": "Expected — growth",
+      "remediation": null
+    },
+    {
+      "id": "COST-A-008",
+      "date": "2026-02-08",
+      "type": "Budget threshold",
+      "severity": "Informational",
+      "subscription": "Lab-Production",
+      "detail": "75% threshold re-check confirmed on-pace",
+      "root_cause": "Normal consumption trajectory",
+      "disposition": "Expected — on-pace",
+      "remediation": null
+    }
+  ]
+}

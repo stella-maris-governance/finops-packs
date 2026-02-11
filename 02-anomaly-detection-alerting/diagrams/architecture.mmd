@@ -1,0 +1,33 @@
+graph TD
+    subgraph DETECT["Detect"]
+        BUDGET["Budget Thresholds"]
+        ACM["Azure Anomaly Detection"]
+        CUSTOM["Custom Detection"]
+        TAG["Tag-Category Alerts"]
+        RESOURCE["Resource Spike Scan"]
+    end
+
+    subgraph TRIAGE["Triage"]
+        INVESTIGATE["Investigate"]
+        DISPOSITION["Disposition"]
+    end
+
+    subgraph OUTCOME["Outcome"]
+        EXPECTED["Expected -- log"]
+        WASTE["Waste -- Pack 05"]
+        GROWTH["Growth -- Pack 03"]
+        CONFIG["Misconfiguration -- remediate"]
+    end
+
+    BUDGET --> INVESTIGATE
+    ACM --> INVESTIGATE
+    CUSTOM --> INVESTIGATE
+    TAG --> INVESTIGATE
+    RESOURCE --> INVESTIGATE
+
+    INVESTIGATE --> DISPOSITION
+
+    DISPOSITION --> EXPECTED
+    DISPOSITION --> WASTE
+    DISPOSITION --> GROWTH
+    DISPOSITION --> CONFIG

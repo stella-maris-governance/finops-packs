@@ -1,0 +1,33 @@
+{
+  "_metadata": {
+    "pack": "anomaly-detection-alerting",
+    "version": "1.0.0",
+    "description": "Azure Cost Management budget definitions with threshold alerts"
+  },
+  "budgets": [
+    {
+      "subscription": "Lab-Production",
+      "monthly_budget": 3200,
+      "currency": "USD",
+      "thresholds": [
+        {"percent": 50, "severity": "Informational", "recipients": ["risk-owner"]},
+        {"percent": 75, "severity": "Warning", "recipients": ["engineering-lead", "risk-owner"]},
+        {"percent": 90, "severity": "High", "recipients": ["engineering-lead", "finance", "risk-owner"]},
+        {"percent": 100, "severity": "Critical", "recipients": ["engineering-lead", "finance", "risk-owner"]}
+      ],
+      "forecast_alert": {"percent": 110, "severity": "High", "recipients": ["engineering-lead", "finance", "risk-owner"]}
+    },
+    {
+      "subscription": "Lab-Development",
+      "monthly_budget": 1800,
+      "currency": "USD",
+      "thresholds": [
+        {"percent": 50, "severity": "Informational", "recipients": ["risk-owner"]},
+        {"percent": 75, "severity": "Warning", "recipients": ["engineering-lead", "risk-owner"]},
+        {"percent": 90, "severity": "High", "recipients": ["engineering-lead", "finance", "risk-owner"]},
+        {"percent": 100, "severity": "Critical", "recipients": ["engineering-lead", "finance", "risk-owner"]}
+      ],
+      "forecast_alert": {"percent": 110, "severity": "High", "recipients": ["engineering-lead", "finance", "risk-owner"]}
+    }
+  ]
+}
