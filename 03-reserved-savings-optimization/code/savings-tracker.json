@@ -1,0 +1,27 @@
+{
+  "_metadata": {
+    "pack": "reserved-savings-optimization",
+    "version": "1.0.0",
+    "description": "Monthly savings tracking: actual vs on-demand counterfactual."
+  },
+  "projected_monthly_savings": {
+    "total": 313.00,
+    "by_reservation": [
+      {"id": "RI-001", "resource": "SQL Database", "savings": 126.00},
+      {"id": "RI-002", "resource": "App Service Plan", "savings": 89.00},
+      {"id": "RI-003", "resource": "VM D4s_v5", "savings": 64.00},
+      {"id": "RI-004", "resource": "Cosmos DB", "savings": 34.00}
+    ],
+    "by_cost_center": [
+      {"cost_center": "CC-1001", "savings": 279.00, "resources": 3},
+      {"cost_center": "CC-1002", "savings": 34.00, "resources": 1}
+    ],
+    "by_project": [
+      {"project": "customer-portal", "savings": 279.00},
+      {"project": "data-pipeline", "savings": 34.00}
+    ],
+    "annual_projected": 3756.00
+  },
+  "actual_monthly_savings": [],
+  "status": "PROJECTED — actual tracking begins on reservation purchase"
+}

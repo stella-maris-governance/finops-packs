@@ -1,0 +1,101 @@
+{
+  "_metadata": {
+    "pack": "reserved-savings-optimization",
+    "version": "1.0.0",
+    "description": "All reservation decisions: accepted, deferred, rejected."
+  },
+  "reservations": [
+    {
+      "id": "RI-001",
+      "name": "SQL Database (Lab-Production)",
+      "type": "Microsoft.Sql/servers/databases",
+      "fitness_score": 94,
+      "recommendation": "RESERVE",
+      "term_months": 12,
+      "on_demand_monthly": 331.00,
+      "ri_monthly": 205.00,
+      "monthly_savings": 126.00,
+      "breakeven_month": 1,
+      "purchase_date": "PENDING",
+      "expiry_date": "PENDING",
+      "utilization_pct": null,
+      "status": "approved_pending_purchase",
+      "tags": {"Owner": "dev-team", "Environment": "production", "CostCenter": "CC-1001", "Project": "customer-portal", "Criticality": "high"}
+    },
+    {
+      "id": "RI-002",
+      "name": "App Service Plan (Lab-Production)",
+      "type": "Microsoft.Web/serverfarms",
+      "fitness_score": 92,
+      "recommendation": "RESERVE",
+      "term_months": 12,
+      "on_demand_monthly": 270.00,
+      "ri_monthly": 181.00,
+      "monthly_savings": 89.00,
+      "breakeven_month": 1,
+      "purchase_date": "PENDING",
+      "expiry_date": "PENDING",
+      "utilization_pct": null,
+      "status": "approved_pending_purchase",
+      "tags": {"Owner": "dev-team", "Environment": "production", "CostCenter": "CC-1001", "Project": "customer-portal", "Criticality": "high"}
+    },
+    {
+      "id": "RI-003",
+      "name": "VM D4s_v5 (Lab-Production)",
+      "type": "Microsoft.Compute/virtualMachines",
+      "fitness_score": 90,
+      "recommendation": "RESERVE",
+      "term_months": 12,
+      "on_demand_monthly": 178.00,
+      "ri_monthly": 114.00,
+      "monthly_savings": 64.00,
+      "breakeven_month": 1,
+      "purchase_date": "PENDING",
+      "expiry_date": "PENDING",
+      "utilization_pct": null,
+      "status": "approved_pending_purchase",
+      "tags": {"Owner": "dev-team", "Environment": "production", "CostCenter": "CC-1001", "Project": "customer-portal", "Criticality": "medium"}
+    },
+    {
+      "id": "RI-004",
+      "name": "Cosmos DB (Lab-Production)",
+      "type": "Microsoft.DocumentDB/databaseAccounts",
+      "fitness_score": 84,
+      "recommendation": "RESERVE",
+      "term_months": 12,
+      "on_demand_monthly": 137.00,
+      "ri_monthly": 103.00,
+      "monthly_savings": 34.00,
+      "breakeven_month": 1,
+      "purchase_date": "PENDING",
+      "expiry_date": "PENDING",
+      "utilization_pct": null,
+      "status": "approved_pending_purchase",
+      "tags": {"Owner": "data-team", "Environment": "production", "CostCenter": "CC-1002", "Project": "data-pipeline", "Criticality": "medium"}
+    }
+  ],
+  "deferred": [
+    {
+      "name": "VM B2s (Lab-Development)",
+      "type": "Microsoft.Compute/virtualMachines",
+      "reason": "Runtime ~40% of month (weekdays only). Weekend auto-shutdown pending (Pack 02 finding). Re-evaluate after implementation.",
+      "next_review": "2026-Q2",
+      "advisor_savings_estimate": 18.00
+    },
+    {
+      "name": "Storage Account (Lab-Production)",
+      "type": "Microsoft.Storage/storageAccounts",
+      "reason": "Savings $12/month below management overhead threshold. Re-evaluate when storage exceeds $100/month.",
+      "next_review": "2026-Q3",
+      "advisor_savings_estimate": 12.00
+    }
+  ],
+  "rejected": [
+    {
+      "name": "VM B1s (Lab-Development)",
+      "type": "Microsoft.Compute/virtualMachines",
+      "reason": "Tagged ExpiryDate: 2026-06-30. Resource decommission within 6 months. 1-year RI would outlive resource.",
+      "advisor_savings_estimate": 8.00
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+graph TD
+    subgraph ANALYZE["Analyze"]
+        ADVISOR["Azure Advisor"]
+        PACK02["Pack 02 Growth Anomalies"]
+        TAGS["Pack 01 Tags"]
+    end
+
+    subgraph SCORE["Score"]
+        FITNESS["Fitness Score (5 factors)"]
+        BREAKEVEN["Break-Even Calculator"]
+    end
+
+    subgraph DECIDE["Decide"]
+        RESERVE["Score >70: Reserve"]
+        SP["Score 40-69: Savings Plan"]
+        ONDEMAND["Score <40: On-Demand"]
+    end
+
+    subgraph MONITOR["Monitor"]
+        UTIL["Utilization Tracking"]
+        SAVINGS["Savings vs On-Demand"]
+        EXPIRY["Expiration Alerts"]
+    end
+
+    ADVISOR --> FITNESS
+    PACK02 --> FITNESS
+    TAGS --> FITNESS
+
+    FITNESS --> BREAKEVEN
+    BREAKEVEN --> RESERVE
+    BREAKEVEN --> SP
+    BREAKEVEN --> ONDEMAND
+
+    RESERVE --> UTIL
+    SP --> UTIL
+    UTIL --> SAVINGS
+    SAVINGS --> EXPIRY
+    EXPIRY -->|Renewal| FITNESS
