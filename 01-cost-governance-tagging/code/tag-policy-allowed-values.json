@@ -1,0 +1,23 @@
+{
+  "_metadata": {
+    "pack": "cost-governance-tagging",
+    "version": "1.0.0",
+    "description": "Azure Policy: restrict Environment tag to allowed values"
+  },
+  "properties": {
+    "displayName": "SMG — Allowed values for Environment tag",
+    "description": "Denies resources with Environment tag values not in the approved list.",
+    "mode": "Indexed",
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {"field": "tags['Environment']", "exists": "true"},
+          {"field": "tags['Environment']", "notIn": ["production", "staging", "development", "sandbox", "test"]}
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}

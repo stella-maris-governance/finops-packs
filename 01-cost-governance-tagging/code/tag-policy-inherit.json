@@ -1,0 +1,35 @@
+{
+  "_metadata": {
+    "pack": "cost-governance-tagging",
+    "version": "1.0.0",
+    "description": "Azure Policy: inherit required tags from resource group to child resources"
+  },
+  "properties": {
+    "displayName": "SMG — Inherit Owner tag from resource group",
+    "description": "If a resource is missing the Owner tag, inherit it from the parent resource group.",
+    "mode": "Indexed",
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {"field": "tags['Owner']", "exists": "false"},
+          {"value": "[resourceGroup().tags['Owner']]", "notEquals": ""}
+        ]
+      },
+      "then": {
+        "effect": "modify",
+        "details": {
+          "roleDefinitionIds": [
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+          ],
+          "operations": [
+            {
+              "operation": "addOrReplace",
+              "field": "tags['Owner']",
+              "value": "[resourceGroup().tags['Owner']]"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

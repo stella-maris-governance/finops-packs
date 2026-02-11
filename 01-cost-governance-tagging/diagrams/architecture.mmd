@@ -1,0 +1,42 @@
+graph TD
+    subgraph DEFINE["Define"]
+        TAXONOMY["Tag Taxonomy"]
+        NAMING["Naming Conventions"]
+        VALUES["Allowed Values"]
+    end
+
+    subgraph ENFORCE["Enforce"]
+        DENY["Policy: Deny Untagged"]
+        AUDIT["Policy: Audit Recommended"]
+        INHERIT["Policy: Tag Inheritance"]
+        ALLOWED["Policy: Allowed Values"]
+    end
+
+    subgraph MONITOR["Monitor"]
+        COMPLIANCE["Compliance Dashboard"]
+        HYGIENE["Hygiene Scan"]
+        REPORT["Weekly Report"]
+    end
+
+    subgraph DOWNSTREAM["Downstream Packs"]
+        ANOMALY["Pack 02: Anomaly Detection"]
+        RESERVE["Pack 03: Reservations"]
+        CHARGE["Pack 04: Chargeback"]
+        WASTE["Pack 05: Waste Elimination"]
+    end
+
+    TAXONOMY --> DENY
+    NAMING --> ALLOWED
+    VALUES --> ALLOWED
+
+    DENY --> COMPLIANCE
+    AUDIT --> COMPLIANCE
+    INHERIT --> COMPLIANCE
+
+    COMPLIANCE --> HYGIENE
+    COMPLIANCE --> REPORT
+
+    REPORT --> ANOMALY
+    REPORT --> RESERVE
+    REPORT --> CHARGE
+    REPORT --> WASTE

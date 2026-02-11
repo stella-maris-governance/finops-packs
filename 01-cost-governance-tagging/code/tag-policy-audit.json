@@ -1,0 +1,25 @@
+{
+  "_metadata": {
+    "pack": "cost-governance-tagging",
+    "version": "1.0.0",
+    "description": "Azure Policy: audit resources missing recommended tags"
+  },
+  "properties": {
+    "displayName": "SMG — Audit recommended tags on resources",
+    "description": "Audits resources missing Criticality, DataClassification, CreatedDate, ReviewDate, ExpiryDate, or ManagedBy tags.",
+    "mode": "Indexed",
+    "policyRule": {
+      "if": {
+        "anyOf": [
+          {"field": "tags['Criticality']", "exists": "false"},
+          {"field": "tags['DataClassification']", "exists": "false"},
+          {"field": "tags['CreatedDate']", "exists": "false"},
+          {"field": "tags['ReviewDate']", "exists": "false"}
+        ]
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  }
+}

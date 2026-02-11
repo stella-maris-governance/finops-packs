@@ -1,0 +1,25 @@
+{
+  "_metadata": {
+    "pack": "cost-governance-tagging",
+    "version": "1.0.0",
+    "description": "Azure Policy: deny resource creation without required tags"
+  },
+  "properties": {
+    "displayName": "SMG — Require mandatory tags on resources",
+    "description": "Denies creation of resources missing Owner, Environment, CostCenter, or Project tags.",
+    "mode": "Indexed",
+    "policyRule": {
+      "if": {
+        "anyOf": [
+          {"field": "tags['Owner']", "exists": "false"},
+          {"field": "tags['Environment']", "exists": "false"},
+          {"field": "tags['CostCenter']", "exists": "false"},
+          {"field": "tags['Project']", "exists": "false"}
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}
