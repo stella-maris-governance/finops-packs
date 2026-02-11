@@ -1,0 +1,90 @@
+============================================================
+  WASTE SCAN RESULTS
+  Date: 2026-02-11 17:13 UTC
+  Resources scanned: 17
+  Findings: 18
+============================================================
+
+  💤 [IDLE] vm-dev-idle-01
+     CPU avg 0.4% for 30 days, 0 network connections
+     Disposition: decommission | $28.00/mo
+
+  💤 [IDLE] vm-dev-poc-01
+     CPU avg 1.2% for 30 days, 0 network connections
+     Disposition: decommission | $12.00/mo
+
+  💤 [IDLE] app-dev-01
+     CPU avg 4% for 14 days
+     Disposition: investigate | $94.00/mo
+
+  💤 [IDLE] storage-dev-empty
+     CPU avg 0% for 30 days, 0 network connections
+     Disposition: decommission | $8.00/mo
+
+  📐 [RIGHTSIZING] vm-dev-api-01
+     P95 CPU 22%, current D2s_v5 → B2s
+     Disposition: rightsize | $89.00/mo | save $58.63/mo
+
+  📐 [RIGHTSIZING] sql-dev-01
+     P95 CPU 18%, current S2 → S0
+     Disposition: rightsize | $81.00/mo | save $65.97/mo
+
+  👻 [ORPHAN] disk-orphan-01
+     Unattached disk
+     Disposition: decommission | $10.00/mo
+
+  👻 [ORPHAN] pip-orphan-01
+     Unattached public IP
+     Disposition: decommission | $3.65/mo
+
+  👻 [ORPHAN] snap-migration-01
+     Aged snapshot — 155 days old
+     Disposition: decommission | $3.20/mo
+
+  👻 [ORPHAN] nic-orphan-01
+     Unattached NIC
+     Disposition: decommission
+
+  ⏰ [SCHEDULE] vm-dev-api-01
+     development resource running 730hrs/month, recommend 220hrs
+     Disposition: schedule | $89.00/mo | save $62.30/mo
+
+  ⏰ [SCHEDULE] vm-dev-idle-01
+     development resource running 730hrs/month, recommend 220hrs
+     Disposition: schedule | $28.00/mo | save $19.60/mo
+
+  ⏰ [SCHEDULE] vm-dev-poc-01
+     development resource running 730hrs/month, recommend 220hrs
+     Disposition: schedule | $12.00/mo | save $8.40/mo
+
+  ⏰ [SCHEDULE] sql-dev-01
+     development resource running 730hrs/month, recommend 220hrs
+     Disposition: schedule | $81.00/mo | save $56.70/mo
+
+  ⏰ [SCHEDULE] app-dev-01
+     development resource running 730hrs/month, recommend 220hrs
+     Disposition: schedule | $94.00/mo | save $65.80/mo
+
+  📅 [AGED] vm-prod-web-01
+     ReviewDate 2025-12-31 — 42 days overdue
+     Disposition: review | $178.00/mo
+
+  📅 [AGED] vm-dev-api-01
+     ReviewDate 2025-12-31 — 42 days overdue
+     Disposition: review | $89.00/mo
+
+  📅 [AGED] vm-dev-poc-01
+     ExpiryDate 2026-01-31 — 11 days past
+     Disposition: decommission | $12.00/mo
+
+============================================================
+  SAVINGS SUMMARY
+  Confirmed (idle + orphan):   $158.85/month
+  Right-sizing:                $124.60/month
+  Schedule (estimated):        $212.80/month
+  Total potential:             $496.25/month
+  Annual potential:            $5,955.00/year
+============================================================
+  Every idle resource is a silent invoice.
+
+  Results written to /home/robert-myers/stella-maris/proof-outputs/waste-output.json

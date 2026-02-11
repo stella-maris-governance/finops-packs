@@ -1,0 +1,31 @@
+============================================================
+  ORPHAN RESOURCE DETECTION
+  Date: 2026-02-11 17:13 UTC
+  Resources scanned: 17
+  Orphans found: 5
+============================================================
+
+  👻 disk-orphan-01 [disks]
+     Managed disk not attached to any VM
+     Cost: $10.00/mo | Created: 2025-12-15
+
+  👻 pip-orphan-01 [publicIPAddresses]
+     Public IP not associated with any NIC
+     Cost: $3.65/mo | Created: 2025-10-22
+
+  👻 snap-migration-01 [snapshots]
+     Snapshot is 155 days old (threshold: 90)
+     Cost: $3.20/mo | Created: 2025-09-10
+
+  👻 nic-orphan-01 [networkInterfaces]
+     NIC not attached to any VM
+     Cost: $0.00/mo | Created: 2025-11-03
+
+  👻 rg-poc-auth [resourceGroups]
+     Empty resource group — contains 0 resources
+     Cost: $0.00/mo | Created: 2025-12-01
+
+============================================================
+  Total orphan cost: $16.85/month ($202.20/year)
+  Orphans accumulate when nobody looks.
+============================================================

@@ -1,0 +1,33 @@
+============================================================
+  COST ALLOCATION ENGINE
+  Date: 2026-02-11 17:13 UTC
+  Resources: 17 | Shared: 6
+============================================================
+
+  ─── Layer 1: Direct Attribution ───
+  CC-1001: $673.00 (9 resources)
+  CC-1002: $536.00 (2 resources)
+  CC-1003: $287.00 (1 resources)
+  Untagged quarantine: $16.85 (5 resources)
+
+  ─── Layer 2: Shared Distribution ───
+  VNet/VPN Gateway ($389.00, proportional): CC-1001: $280.08, CC-1002: $70.02, CC-1003: $38.90
+  Entra ID Licensing ($180.00, equal): CC-1001: $60.00, CC-1002: $60.00, CC-1003: $60.00
+  Defender for Cloud ($156.00, proportional): CC-1001: $101.40, CC-1002: $31.20, CC-1003: $23.40
+  Key Vault ($45.00, proportional): CC-1001: $24.75, CC-1002: $13.50, CC-1003: $6.75
+  Log Analytics Workspace ($198.00, proportional): CC-1001: $118.80, CC-1002: $49.50, CC-1003: $29.70
+  Shared Backup Storage ($70.00, proportional): CC-1001: $35.00, CC-1002: $24.50, CC-1003: $10.50
+
+  ─── Fully Loaded Cost ───
+  CC-1001: $673.00 direct + $620.03 shared = $1293.03 (50.7%)
+  CC-1002: $536.00 direct + $248.72 shared = $784.72 (30.8%)
+  CC-1003: $287.00 direct + $169.25 shared = $456.25 (17.9%)
+  Quarantine: $16.85
+
+============================================================
+  Grand total: $2550.85
+  Leakage: $0.00
+  The team that provisions the resource owns the bill.
+============================================================
+
+  Output written to /home/robert-myers/stella-maris/proof-outputs/allocation-output.json

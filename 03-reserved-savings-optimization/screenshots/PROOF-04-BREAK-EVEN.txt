@@ -1,0 +1,65 @@
+========================================================================
+  STELLA MARIS GOVERNANCE — BREAK-EVEN CALCULATOR v1.0.0
+  FinOps Pack 03 — Reserved Instance Break-Even Analysis
+========================================================================
+
+  ── sql-prod-01 (SQL Database) ──
+     On-demand:    $331.00/month
+     1-Year RI:    $205.00/month (upfront: $0.00)
+     Monthly save: $126.00
+     Break-even:   Month 1
+     12-mo savings: $1512.00
+
+     Risk Scenarios (if decommissioned early):
+       Month  3: $  378.00 ✅ Net positive
+       Month  6: $  756.00 ✅ Net positive
+       Month  9: $ 1134.00 ✅ Net positive
+       Month 12: $ 1512.00 ✅ Net positive
+
+  ── app-prod-01 (App Service) ──
+     On-demand:    $94.00/month
+     1-Year RI:    $58.00/month (upfront: $0.00)
+     Monthly save: $36.00
+     Break-even:   Month 1
+     12-mo savings: $432.00
+
+     Risk Scenarios (if decommissioned early):
+       Month  3: $  108.00 ✅ Net positive
+       Month  6: $  216.00 ✅ Net positive
+       Month  9: $  324.00 ✅ Net positive
+       Month 12: $  432.00 ✅ Net positive
+
+  ── vm-prod-web-01 (Virtual Machine) ──
+     On-demand:    $178.00/month
+     1-Year RI:    $112.00/month (upfront: $0.00)
+     Monthly save: $66.00
+     Break-even:   Month 1
+     12-mo savings: $792.00
+
+     Risk Scenarios (if decommissioned early):
+       Month  3: $  198.00 ✅ Net positive
+       Month  6: $  396.00 ✅ Net positive
+       Month  9: $  594.00 ✅ Net positive
+       Month 12: $  792.00 ✅ Net positive
+
+  ── cosmos-prod-01 (Cosmos DB) ──
+     On-demand:    $205.00/month
+     1-Year RI:    $143.00/month (upfront: $0.00)
+     Monthly save: $62.00
+     Break-even:   Month 1
+     12-mo savings: $744.00
+
+     Risk Scenarios (if decommissioned early):
+       Month  3: $  186.00 ✅ Net positive
+       Month  6: $  372.00 ✅ Net positive
+       Month  9: $  558.00 ✅ Net positive
+       Month 12: $  744.00 ✅ Net positive
+
+════════════════════════════════════════════════════════════════════════
+  Aggregate monthly savings: $290.00
+  Aggregate annual savings:  $3480.00
+  All candidates break-even at Month 1 (no upfront)
+
+  © 2026 Stella Maris Governance LLC
+  The work speaks for itself.
+════════════════════════════════════════════════════════════════════════

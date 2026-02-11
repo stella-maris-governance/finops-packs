@@ -1,0 +1,102 @@
+========================================================================
+  STELLA MARIS GOVERNANCE — RESERVATION FITNESS SCORING v1.0.0
+  FinOps Pack 03 — Reserved Instance & Savings Plan Optimization
+========================================================================
+
+  Workloads evaluated:  6
+
+────────────────────────────────────────────────────────────────────────
+  SCORING DETAIL
+────────────────────────────────────────────────────────────────────────
+
+  🟢 sql-prod-01 (SQL Database)
+     Environment: production | Criticality: critical
+     ── Factor Scores ──
+     Utilization Stability (30%):   75  (CV: 0.19)
+     Runtime Hours (25%):          100  (168hrs/week)
+     Workload Lifecycle (20%):     100  (36 months expected)
+     Environment (15%):            100  (production)
+     Criticality (10%):            100  (critical)
+     ── Composite ──
+     FITNESS SCORE: 92/100
+     RECOMMENDATION: RESERVE (1-year RI)
+     Savings: $126.00/month ($1512.00/year)
+
+  🟢 app-prod-01 (App Service)
+     Environment: production | Criticality: high
+     ── Factor Scores ──
+     Utilization Stability (30%):   50  (CV: 0.32)
+     Runtime Hours (25%):          100  (168hrs/week)
+     Workload Lifecycle (20%):     100  (24 months expected)
+     Environment (15%):            100  (production)
+     Criticality (10%):             80  (high)
+     ── Composite ──
+     FITNESS SCORE: 83/100
+     RECOMMENDATION: RESERVE (1-year RI)
+     Savings: $36.00/month ($432.00/year)
+
+  🟢 vm-prod-web-01 (Virtual Machine)
+     Environment: production | Criticality: high
+     ── Factor Scores ──
+     Utilization Stability (30%):   50  (CV: 0.44)
+     Runtime Hours (25%):          100  (168hrs/week)
+     Workload Lifecycle (20%):     100  (24 months expected)
+     Environment (15%):            100  (production)
+     Criticality (10%):             80  (high)
+     ── Composite ──
+     FITNESS SCORE: 83/100
+     RECOMMENDATION: RESERVE (1-year RI)
+     Savings: $66.00/month ($792.00/year)
+
+  🟢 cosmos-prod-01 (Cosmos DB)
+     Environment: production | Criticality: critical
+     ── Factor Scores ──
+     Utilization Stability (30%):   75  (CV: 0.18)
+     Runtime Hours (25%):          100  (168hrs/week)
+     Workload Lifecycle (20%):     100  (36 months expected)
+     Environment (15%):            100  (production)
+     Criticality (10%):            100  (critical)
+     ── Composite ──
+     FITNESS SCORE: 92/100
+     RECOMMENDATION: RESERVE (1-year RI)
+     Savings: $62.00/month ($744.00/year)
+
+  🔴 vm-dev-api-01 (Virtual Machine)
+     Environment: development | Criticality: medium
+     ── Factor Scores ──
+     Utilization Stability (30%):   25  (CV: 1.50)
+     Runtime Hours (25%):           29  (50hrs/week)
+     Workload Lifecycle (20%):      70  (12 months expected)
+     Environment (15%):             30  (development)
+     Criticality (10%):             60  (medium)
+     ── Composite ──
+     FITNESS SCORE: 39/100
+     RECOMMENDATION: ON-DEMAND
+     Reason: Commitment risk exceeds discount benefit
+
+  🔴 vm-sandbox-temp (Virtual Machine)
+     Environment: sandbox | Criticality: low
+     ── Factor Scores ──
+     Utilization Stability (30%):   25  (CV: 3.60)
+     Runtime Hours (25%):           11  (20hrs/week)
+     Workload Lifecycle (20%):      10  (4 months expected)
+     Environment (15%):             10  (sandbox)
+     Criticality (10%):             30  (low)
+     ── Composite ──
+     FITNESS SCORE: 17/100
+     RECOMMENDATION: ON-DEMAND
+     Reason: Commitment risk exceeds discount benefit
+
+════════════════════════════════════════════════════════════════════════
+  RECOMMENDATION SUMMARY
+════════════════════════════════════════════════════════════════════════
+
+  RESERVE:       4 workloads
+  SAVINGS PLAN:  Evaluate if mixed instance families needed
+  ON-DEMAND:     2 workloads (dev/sandbox — don't commit)
+
+  Total projected savings (reserves): $290.00/month ($3480.00/year)
+
+  © 2026 Stella Maris Governance LLC
+  The work speaks for itself.
+════════════════════════════════════════════════════════════════════════
