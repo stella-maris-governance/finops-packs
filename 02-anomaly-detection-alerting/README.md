@@ -203,13 +203,15 @@ Daily scan identifies individual resources where:
 
 ### `screenshots/` — Evidence
 
-| # | What It Shows |
-|---|--------------|
-| 01 | Azure Cost Management budget with threshold alerts configured |
-| 02 | Anomaly detection: cost spike identified with investigation |
-| 03 | Tag-category alert: sandbox environment cost spike |
-| 04 | Resource-level spike: individual VM cost anomaly |
-| 05 | Alert register: triage log with dispositions |
+This pack uses **deterministic engine outputs** as primary evidence rather than portal screenshots.
+
+| Evidence Type | Format | Purpose |
+|--------------|--------|---------|
+| Engine output (`.txt`) | Script terminal output | Primary — proves logic and methodology |
+| Report output (`.md`) | Formatted engine report | Primary — proves analysis and findings |
+| Portal screenshot (`.png`) | Azure portal capture | Secondary — added when running against live environment |
+
+> See `EVIDENCE-README.md` in the screenshots directory for the full evidence approach.
 
 ---
 

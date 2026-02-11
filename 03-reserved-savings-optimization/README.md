@@ -186,13 +186,15 @@ The break-even calculation answers: "If this workload disappears in month N, did
 
 ### `screenshots/` — Evidence
 
-| # | What It Shows |
-|---|--------------|
-| 01 | Azure Advisor reservation recommendations |
-| 02 | Reservation fitness score output for candidate workloads |
-| 03 | Break-even analysis for top candidates |
-| 04 | Reservation utilization dashboard |
-| 05 | Monthly savings report: actual vs on-demand |
+This pack uses **deterministic engine outputs** as primary evidence rather than portal screenshots.
+
+| Evidence Type | Format | Purpose |
+|--------------|--------|---------|
+| Engine output (`.txt`) | Script terminal output | Primary — proves logic and methodology |
+| Report output (`.md`) | Formatted engine report | Primary — proves analysis and findings |
+| Portal screenshot (`.png`) | Azure portal capture | Secondary — added when running against live environment |
+
+> See `EVIDENCE-README.md` in the screenshots directory for the full evidence approach.
 
 ---
 
