@@ -1,6 +1,6 @@
 # Chargeback & Showback Pack
 
-> "Where did the money go?" is a question that should never require more than 30 seconds to answer. Chargeback assigns cost to the team that incurred it. Showback makes cost visible to the team that incurred it. Together, they transform cloud spending from an opaque corporate expense into a transparent, accountable, per-team operating cost. The team that provisions the resource owns the bill.
+> "Where did the money go?" is a question that should never require more than 30 seconds to answer. Chargeback assigns cost to the team that incurred it. Showback makes cost visible to the team that incurred it. Together, they transform cloud spending from an opaque corporate expense into transparent **cloud unit economics** — accountable, per-team operating costs where every dollar traces to the team that consumed it. The team that provisions the resource owns the bill.
 
 [![Controls](https://img.shields.io/badge/Expected_vs_Observed-10_controls-8957e5?style=flat-square)]()
 [![Framework](https://img.shields.io/badge/framework-FinOps_Foundation_·_Azure_Cost_Management-ff6b35?style=flat-square)]()

@@ -1,6 +1,6 @@
 # Cost Governance & Tagging Policy Pack
 
-> You cannot govern what you cannot see. In cloud infrastructure, visibility begins with tags. An untagged resource is an unaccountable dollar — you don't know who owns it, why it exists, or whether it should.
+> You cannot govern what you cannot see. In cloud infrastructure, visibility begins with cost allocation metadata — the tags that transform anonymous resources into accountable, attributable spending. An untagged resource is an unaccountable dollar — you don't know who owns it, why it exists, or whether it should.
 
 [![Controls](https://img.shields.io/badge/Expected_vs_Observed-10_controls-8957e5?style=flat-square)]()
 [![Framework](https://img.shields.io/badge/framework-FinOps_Foundation_·_Azure_Policy-ff6b35?style=flat-square)]()
@@ -39,7 +39,7 @@ In aerospace logistics, every part has a part number, a lot number, and a cage c
 
 | Capability | What It Does | How |
 |-----------|-------------|-----|
-| **Tagging taxonomy** | Standard set of required and recommended tags for all cloud resources | Documented taxonomy with naming conventions and allowed values |
+| **Cost allocation metadata taxonomy** | Standard set of required and recommended tags for all cloud resources | Documented taxonomy with naming conventions and allowed values |
 | **Tag enforcement policy** | Azure Policy denies resource creation without required tags | `deny` policy for required tags, `audit` for recommended |
 | **Tag compliance monitoring** | Continuous measurement of tagging compliance across all subscriptions | Azure Policy compliance dashboard, weekly reports |
 | **Tag inheritance** | Resource groups pass tags to child resources | Azure Policy `modify` effect for tag inheritance |
