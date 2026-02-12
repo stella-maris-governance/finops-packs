@@ -25,7 +25,7 @@
 
 ## The Problem
 
-Cloud providers offer three pricing models: on-demand (pay as you go), reserved (commit for 1-3 years at a discount), and savings plans (commit to a spending level for a discount). The economics are straightforward — a 1-year reservation on an Azure VM saves roughly 30-40% over on-demand. A 3-year reservation saves 55-65%.
+Cloud providers offer three pricing models: on-demand (pay as you go), reserved (commit for 1-3 years at a discount), and savings plans (commit to a spending level for a discount). The economics are simple — a 1-year reservation on an Azure VM saves roughly 30-40% over on-demand. A 3-year reservation saves 55-65%.
 
 The problem is not understanding the math. The problem is making the commitment. A reservation is a bet — you're betting that this workload will run at this size for this duration. If you bet right, you save thousands. If you bet wrong, you've prepaid for something you don't use. The unused reservation bleeds money every hour it sits idle.
 

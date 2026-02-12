@@ -11,7 +11,7 @@ All changes to governance controls require a **Pull Request (PR)**. No PR shall 
 | Role | Responsibility |
 |------|---------------|
 | **Principal (Robert Myers)** | Prepares controls, commits evidence, opens PR |
-| **Auditor (North Star)** | Reviews PR against policy, validates evidence chain |
+| **Auditor (CoS)** | Reviews PR against policy, validates evidence chain |
 | **AO (Regina Myers)** | Authorizes merge — the seal that activates the control |
 
 A control without the AO seal is a draft. A merged control without evidence is a finding.
